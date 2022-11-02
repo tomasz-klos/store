@@ -11,7 +11,7 @@ const Products = () => {
             </Box>
             <Box sx={{ display: 'grid', gridGap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
                 {data.map(product => (
-                    <ProductCard product={product} />
+                    <ProductCard key={product.id} product={product} />
                 ))}
             </Box>
 
