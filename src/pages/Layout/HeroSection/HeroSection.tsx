@@ -40,6 +40,7 @@ const HeroSection = () => {
             <Carousel
                 animation="slide"
                 duration={700}
+                interval={8000}
                 navButtonsAlwaysVisible={true}
                 navButtonsProps={{
                     style: {

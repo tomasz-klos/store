@@ -1,5 +1,6 @@
 import HeroSection from "./HeroSection/HeroSection";
 import Nav from "./Nav/Nav";
+import Categories from "./Categories/Categories";
 
 const Layout = () => {
 
@@ -7,6 +8,7 @@ const Layout = () => {
        <>
        <Nav />
        <HeroSection />
+       <Categories />
        </>
     )
 }
