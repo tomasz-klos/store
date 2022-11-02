@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 
-interface Book {
+interface Product {
     id: number,
     title: string,
     price: number,
@@ -19,22 +19,23 @@ interface Book {
     }
 }
 
-const Product = (props: { book: Book }) => {
-    const { book } = props;
+const Product = (props: { product: Product }) => {
+    const { product } = props;
+    if (!product) return <div></div>;
     return (
         <Card sx={{ minWidth: '30%', overflow: 'visible' }}>
             <CardActionArea>
                 <Box sx={{ display: 'flex', justifyContent: 'center', maxWidth: '100%', height: '50%' }}>
-                    <CardMedia component="img" image={book.image} alt="" height={300} sx={{ width: 'auto', padding: '20px 0' }} />
+                    <CardMedia component="img" image={product?.image} alt="" height={300} sx={{ width: 'auto', padding: '20px 0' }} />
                 </Box>
                 <CardContent sx={{ padding: '1rem 2rem' }}>
                     <Box sx={{ display: 'flex' }}>
-                        <Rating name="read-only" value={book.rating.rate} readOnly />
-                        <Typography variant="caption">({book.rating.count})</Typography>
+                        <Rating name="read-only" value={product?.rating.rate} readOnly />
+                        <Typography variant="caption">({product?.rating.count})</Typography>
                     </Box>
-                    <Typography variant="h4">{book.title}</Typography>
+                    <Typography variant="h4">{product?.title}</Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {book.description}
+                        {product?.description}
                     </Typography>
                 </CardContent>
             </CardActionArea>
