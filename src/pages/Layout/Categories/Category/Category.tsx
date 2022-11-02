@@ -9,7 +9,7 @@ const Category = () => {
     return (
         <Box component="article">
             <Typography variant="h3">Category</Typography>
-            <Box sx={{ display: 'flex', gap: 10, padding: '5% 0' }}>
+            <Box sx={{ display: 'grid', gridGap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
                 <Product book={data[0]} />
                 <Product book={data[1]} />
                 <Product book={data[2]} />
@@ -17,5 +17,9 @@ const Category = () => {
         </Box>
     )
 }
-
+// display: grid;
+//     grid-gap: 1rem;
+//     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 export default Category;
+
+// sx={{ display: 'flex', gap: 10, padding: '5% 0' }}

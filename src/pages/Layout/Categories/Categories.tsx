@@ -6,12 +6,12 @@ import Category from "./Category/Category";
 const Categories = () => {
 
     return (
-        <Container component="section" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , padding: '5% 0'}}>
+        <Box component="section" sx={{ display: 'grid', gridGap: '3rem', padding: '10% 5%', maxWidth: '90%' }}>
             <Typography variant="h2">Categories</Typography>
             <Category />
             <Category />
             <Category />
-        </Container>
+        </Box>
     )
 }
 

@@ -9,20 +9,20 @@ const HeroSection = () => {
     const [activeStep, setActiveStep] = useState<number>(0);
     const images = [
         {
-            title: 'San Francisco – Oakland Bay Bridge, United States',
-            desc: 'asdasdasdasdasdasdasdasdas',
+            title: 'San Francisco ',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure accusantium laboriosam, recusandae delectus sunt quia voluptate quibusdam at sint dicta asperiores, facere reiciendis est in assumenda aut magnam atque consequuntur.',
         },
         {
             title: 'Bird',
-            desc: 'asdasdasdasdasdasdasdasdas',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure accusantium laboriosam, recusandae delectus sunt quia voluptate quibusdam at sint dicta asperiores, facere reiciendis est in assumenda aut magnam atque consequuntur.',
         },
         {
             title: 'Bali, Indonesia',
-            desc: 'asdasdasdasdasdasdasdasdas',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure accusantium laboriosam, recusandae delectus sunt quia voluptate quibusdam at sint dicta asperiores, facere reiciendis est in assumenda aut magnam atque consequuntur.',
         },
         {
             title: 'Goč, Serbia',
-            desc: 'asdasdasdasdasdasdasdasdas',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure accusantium laboriosam, recusandae delectus sunt quia voluptate quibusdam at sint dicta asperiores, facere reiciendis est in assumenda aut magnam atque consequuntur.',
         },
     ];
 
@@ -36,27 +36,28 @@ const HeroSection = () => {
 
 
     return (
-        <Box component="section" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', flexGrow: 1, height: '80%' }}>
+        <Box component="section" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', flexGrow: 1 }}>
             <Carousel
+            autoPlay={false}
                 animation="slide"
                 duration={700}
                 interval={8000}
                 navButtonsAlwaysVisible={true}
                 navButtonsProps={{
                     style: {
-                        background: 'none', width: 64, height: 64,
+                        background: 'none', width: 48, height: 48,  margin: 0, fill: '#495057'
                     }
                 }}
                 next={handleNext}
-                NextIcon={<KeyboardArrowRight sx={{ width: 64, height: 64, fill: '#495057' }} />}
+                NextIcon={<KeyboardArrowRight sx={{ width: 48, height: 48, fill: '#495057' }} />}
                 prev={handleBack}
-                PrevIcon={<KeyboardArrowLeft sx={{ width: 64, height: 64, fill: '#495057' }} />}
+                PrevIcon={<KeyboardArrowLeft sx={{ width: 48, height: 48, fill: '#495057' }} />}
                 sx={{ width: '100%', background: '#e9ecef' }}
             >
                 {images.map((step) => (
                     <Box component="article" key={step.title}>
                         <Box
-                            sx={{ maxWidth: '100vw', height: '70%', padding: '15% 5%' }}
+                            sx={{ maxWidth: '100vw', padding: '15% 10%' }}
                         >
                             <Typography variant="h2">{step.title}</Typography>
                             <Typography variant="body1">{step.desc}</Typography>

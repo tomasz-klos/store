@@ -5,11 +5,11 @@ import Categories from "./Categories/Categories";
 const Layout = () => {
 
     return (
-       <>
-       <Nav />
-       <HeroSection />
-       <Categories />
-       </>
+        <>
+            <Nav />
+            <HeroSection />
+            <Categories />
+        </>
     )
 }
 export default Layout;

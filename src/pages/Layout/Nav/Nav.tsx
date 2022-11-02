@@ -13,43 +13,26 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import Badge from "@mui/material/Badge";
 import Grid from "@mui/material/Grid";
+import MenuIcon from '@mui/icons-material/Menu';
+import useTheme from "@mui/material/styles/useTheme";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import NavIconBox from "./NavIconBox/NavIconBox";
+import MobileNav from "./MobileNav/MobileNav";
+import DesktopNav from "./DesktopNav/DesktopNav";
 
 
 
 const Nav = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up('md'));
+
     const pages = ['Home', 'About', 'Shop', 'Contact'];
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
+
     return (
         <AppBar position="static">
             <Toolbar>
-                <Box>
-                    <Typography>Store.</Typography>
-                </Box>
-                <Grid container justifyContent="center">
-                <List sx={{ display: 'flex' }}>
-                    {pages.map((item) => (
-                        <ListItem key={item}>
-                            <ListItemButton sx={{ textAlign: 'center' }}>
-                                <ListItemText primary={item} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-                </Grid>
-                <Box sx={{ flexGrow: 1 }} />
-                <Box display="flex">
-                    <IconButton size="large">
-                        <SearchOutlinedIcon />
-                    </IconButton>
-                    <IconButton size="large">
-                        <Badge badgeContent={2} color="error">
-                            <ShoppingCartOutlinedIcon />
-                        </Badge>
-                    </IconButton>
-                    <IconButton size="large">
-                        <AccountCircleOutlinedIcon />
-                    </IconButton>
-                </Box>
+                {matches ? <DesktopNav pages={pages} /> : <MobileNav pages={pages} />}
             </Toolbar>
         </AppBar>
     )
