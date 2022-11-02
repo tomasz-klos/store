@@ -1,6 +1,7 @@
 import HeroSection from "./HeroSection/HeroSection";
 import Nav from "./Nav/Nav";
 import Categories from "./Categories/Categories";
+import Footer from "./Footer/Footer";
 
 const Layout = () => {
 
@@ -9,6 +10,7 @@ const Layout = () => {
             <Nav />
             <HeroSection />
             <Categories />
+            <Footer />
         </>
     )
 }

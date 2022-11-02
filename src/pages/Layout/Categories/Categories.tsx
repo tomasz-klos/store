@@ -23,7 +23,7 @@ const Categories = () => {
     },[])
 
     return (
-        <Box component="section" sx={{ display: 'grid', gridGap: '3rem', padding: '10% 5%', maxWidth: '90%' }}>
+        <Box component="section" sx={{ display: 'grid', gridGap: '3rem', padding: '10% 5%' }}>
             <Typography variant="h2">Categories</Typography>
             <Category title="Men's clothing" products={menProducts} />
             <Category title="Jewelery" products={jeweleryProducts} />
