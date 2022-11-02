@@ -46,7 +46,7 @@ const Footer = () => {
                 </List>
             </Box>
             </Box>
-            <Box sx={{background: '#d9d9d9', color: '#353535', padding: '5%'}}>
+            <Box sx={{background: '#d9d9d9', color: '#353535', padding: '20px 5%'}}>
                 <Typography>Copyright © 2022 Store.</Typography>
             </Box>
         </Box>

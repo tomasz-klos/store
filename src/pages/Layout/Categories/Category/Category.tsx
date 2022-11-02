@@ -1,7 +1,7 @@
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Product from "../Product/Product";
+import ProductCard from "../ProductCard/ProductCard";
 
 
 const Category = (props: {products: any[], title: string}) => {
@@ -10,9 +10,9 @@ const Category = (props: {products: any[], title: string}) => {
         <Box component="article">
             <Typography variant="h3">{title}</Typography>
             <Box sx={{ display: 'grid', gridGap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-                <Product product={products[0]} />
-                <Product product={products[1]} />
-                <Product product={products[2]} />
+                <ProductCard product={products[0]} />
+                <ProductCard product={products[1]} />
+                <ProductCard product={products[2]} />
             </Box>
         </Box>
     )

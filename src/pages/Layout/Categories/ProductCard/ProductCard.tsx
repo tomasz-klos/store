@@ -20,7 +20,7 @@ interface Product {
     }
 }
 
-const Product = (props: { product: Product }) => {
+const ProductCard = (props: { product: Product }) => {
     const { product } = props;
     if (!product) return <div></div>;
     return (
@@ -29,7 +29,7 @@ const Product = (props: { product: Product }) => {
                 <Box sx={{ display: 'flex', justifyContent: 'center', maxWidth: '100%', height: '50%' }}>
                     <CardMedia component="img" image={product.image} alt="" height={300} sx={{ width: 'auto', maxHeight: '100%' , padding: '20px 0' }} />
                 </Box>
-                <CardContent sx={{ padding: '1rem 2rem', height: '50%' }}>
+                <CardContent sx={{ padding: '1rem', height: '50%' }}>
                     <Box sx={{ display: 'flex', paddingBottom: '10px' }}>
                         <Rating name="read-only" value={product.rating.rate} readOnly />
                         <Typography variant="caption">({product.rating.count})</Typography>
@@ -47,4 +47,4 @@ const Product = (props: { product: Product }) => {
     )
 }
 
-export default Product;
+export default ProductCard;

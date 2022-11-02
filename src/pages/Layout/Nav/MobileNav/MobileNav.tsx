@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import NavIconBox from "../NavIconBox/NavIconBox";
@@ -10,8 +11,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
+import { Pages } from "../../../../helpers/interfaces";
 
-const MobileNav = (props: { pages: Array<string> }) => {
+const MobileNav = (props: { pages: Pages[] }) => {
     const { pages } = props;
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -41,10 +43,10 @@ const MobileNav = (props: { pages: Array<string> }) => {
             >
                 <Box>
                     <List sx={{ display: 'flex', flexDirection: 'column' }}>
-                        {pages.map((item) => (
-                            <ListItem key={item}>
+                        {pages.map(({ title, path }: Pages) => (
+                            <ListItem key={title} component={Link} to={path}>
                                 <ListItemButton sx={{ textAlign: 'center' }}>
-                                    <ListItemText primary={item} />
+                                    <ListItemText primary={title} />
                                 </ListItemButton>
                             </ListItem>
                         ))}

@@ -7,9 +7,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import NavIconBox from "../NavIconBox/NavIconBox";
+import { Link } from "react-router-dom";
+import { Pages } from "../../../../helpers/interfaces";
 
 
-const DesktopNav = (props: {pages: Array<string>}) => {
+const DesktopNav = (props: {pages: Pages[]}) => {
     const { pages } = props;
     return (
         <>
@@ -18,10 +20,10 @@ const DesktopNav = (props: {pages: Array<string>}) => {
             </Box>
             <Grid container justifyContent="center">
                 <List sx={{ display: 'flex' }}>
-                    {pages.map((item) => (
-                        <ListItem key={item}>
+                    {pages.map(({title, path}: Pages) => (
+                        <ListItem key={title} component={Link} to={path}>
                             <ListItemButton sx={{ textAlign: 'center' }}>
-                                <ListItemText primary={item} />
+                                <ListItemText primary={title} />
                             </ListItemButton>
                         </ListItem>
                     ))}

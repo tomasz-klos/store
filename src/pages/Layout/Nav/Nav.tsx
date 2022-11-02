@@ -19,14 +19,18 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import NavIconBox from "./NavIconBox/NavIconBox";
 import MobileNav from "./MobileNav/MobileNav";
 import DesktopNav from "./DesktopNav/DesktopNav";
-
-
+import { Pages } from "../../../helpers/interfaces";
 
 const Nav = () => {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up('md'));
 
-    const pages = ['Home', 'About', 'Shop', 'Contact'];
+    const pages: Pages[] = [
+        { title: 'Home', path: '/' },
+        { title: 'About', path: '/about' },
+        { title: 'Products', path: '/products' },
+        { title: 'Contact', path: '/contact' },
+    ];
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
 
     return (
